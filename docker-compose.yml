@@ -33,10 +33,10 @@ services:
     environment:
       - NODE_ENV=development
     volumes:
-      - ./calendar-service:/app
+      - ./calendar-service:/app/calendar-service
     networks:
       - soa_network
-    command: npm start
+    command: node app.js
   billing_service:
     hostname: billing-service
     build:
@@ -45,7 +45,7 @@ services:
     volumes:
       - ./billing-service:/app
     networks:
-      - soa_network    
+      - soa_network
   nginx:
     image: nginx
     volumes:

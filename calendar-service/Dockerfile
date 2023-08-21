@@ -1,12 +1,15 @@
 FROM node:current-alpine3.17
 
-WORKDIR /usr/src/app
+WORKDIR /app
+
+RUN apk add tini
 
 COPY package*.json ./
+
 RUN npm install
 
-COPY . .
+WORKDIR /app/calendar-service
 
 EXPOSE 8000
 
-CMD ["node", "server.js"]
+ENTRYPOINT ["tini", "--"]
