@@ -23,6 +23,10 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
 
+  config.user_service_endpoint = "http://user-service:8000"
+  config.calendar_service_endpoint = "http://calendar-service:8000"
+  config.billing_service_endpoint = "http://billing-service:8000"
+
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
 

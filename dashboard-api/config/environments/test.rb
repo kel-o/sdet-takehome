@@ -22,6 +22,10 @@ Rails.application.configure do
     "Cache-Control" => "public, max-age=#{1.hour.to_i}"
   }
 
+  config.user_service_endpoint = "http://user-service:8000"
+  config.calendar_service_endpoint = "http://calendar-service:8000"
+  config.billing_service_endpoint = "http://billing-service:8000"
+
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false

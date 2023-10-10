@@ -17,6 +17,10 @@ Rails.application.configure do
   # Enable server timing
   config.server_timing = true
 
+  config.user_service_endpoint = "http://user-service:8000"
+  config.calendar_service_endpoint = "http://calendar-service:8000"
+  config.billing_service_endpoint = "http://billing-service:8000"
+
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join("tmp/caching-dev.txt").exist?
