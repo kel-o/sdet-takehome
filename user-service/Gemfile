@@ -46,3 +46,15 @@ group :development do
   # gem "spring"
 end
 
+group :development, :test do
+  gem 'rspec'
+  gem 'pact'
+  gem 'pry'
+end
+
+gem 'rake'
+gem 'rack', '~> 2.2', '>= 2.2.6.4'
+gem 'sequel'
+gem 'sinatra'
+gem 'sinatra-json'
+

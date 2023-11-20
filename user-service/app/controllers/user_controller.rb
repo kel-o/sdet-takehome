@@ -1,4 +1,6 @@
 class UserController < ApplicationController
+  # include ProviderStatesForDasboardApi
+  
   USERS = [
     {'id' => 1, 'first_name' => 'Michael', 'last_name' => 'Scott', 'position' => 'Regional Manager', 'role' => 'admin', 'time_zone' => 'America/New_York'}, 
     {'id' => 2, 'first_name' => 'Jim', 'last_name' => 'Halpert', 'position' => 'Salesperson', 'role' => 'user', 'time_zone' => 'America/Detroit'},

@@ -40,10 +40,33 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "mocha", require: false
+  # gem 'rspec'
+  # gem 'pact'
+  # gem 'pact_broker-client'
+  # gem 'pry'
 end
+
+
+# gem 'rake'
+
+# gem 'rack', '~> 2.2', '>= 2.2.6.4'
+# gem 'httparty', '>= 0.21.0'
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
 
+if ENV['X_PACT_DEVELOPMENT']
+  gem "pact", path: '../pact'
+  gem "pact-support", path: '../pact-support'
+  gem "pact-mock_service", path: '../pact-mock_service'
+else
+  gem "pact", "~> 1.63"
+end
+
+gem "pact_broker-client"
+gem "rake", "~> 12"
+gem "rspec", "~> 3"
+gem "faraday", "~> 1.0", "< 3.0"
+gem "pry-byebug", "~> 3"
